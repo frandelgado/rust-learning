@@ -1,0 +1,8 @@
+# Rustlings gitignore
+rustlings/*.swp
+rustlings/target/
+rustlings/**/*.rs.bk
+rustlings/.DS_Store
+rustlings/*.pdb
+rustlings/exercises/clippy/Cargo.toml
+rustlings/exercises/clippy/Cargo.lock
