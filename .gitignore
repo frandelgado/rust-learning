@@ -6,3 +6,4 @@ rustlings/.DS_Store
 rustlings/*.pdb
 rustlings/exercises/clippy/Cargo.toml
 rustlings/exercises/clippy/Cargo.lock
+rustlings/.idea/**

@@ -10,7 +10,6 @@ struct Person {
     age: usize,
 }
 
-// I AM NOT DONE
 // Your task is to complete this implementation
 // in order for the line `let p = Person::try_from("Mark,20")` to compile
 // and return an Ok result of inner type Person.
@@ -25,9 +24,27 @@ struct Person {
 // 4. Extract the other element from the split operation and parse it into a `usize` as the age
 // If while parsing the age, something goes wrong, then return an error
 // Otherwise, then return a Result of a Person object
+
 impl TryFrom<&str> for Person {
     type Error = String;
     fn try_from(s: &str) -> Result<Self, Self::Error> {
+        let vec: Vec<&str> = s.split(",").collect();
+        if vec.len() < 2 {
+            return Err("".to_string())
+        }
+
+        let age = vec[1].parse::<usize>();
+        match age {
+            Ok(val) => {
+                return Ok(Person {
+                    name: String::from(vec[0]),
+                    age: val
+                })
+            }
+            Err(err) => {
+                return Err("".to_string())
+            }
+        }
     }
 }
 
